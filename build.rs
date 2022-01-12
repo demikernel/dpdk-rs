@@ -29,6 +29,7 @@ fn main() {
 
     let ldflags_bytes = Command::new("pkg-config")
         .args(&["--libs", "libdpdk"])
+        .env("PKG_CONFIG_ALLOW_SYSTEM_LIBS", "1")
         .output()
         .unwrap_or_else(|e| panic!("Failed pkg-config ldflags: {:?}", e))
         .stdout;
