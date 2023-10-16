@@ -11,6 +11,7 @@ readme = "README.md"
 homepage = "https://aka.ms/demikernel"
 repository = "https://github.com/demikernel/dpdk-rs"
 license-file = "LICENSE.txt"
+links = "dpdk"
 
 [dependencies]
 cfg-if = "1.0.0"
@@ -19,6 +20,7 @@ cfg-if = "1.0.0"
 anyhow = "1.0.62"
 bindgen = "0.60.1"
 cc = "1.0.73"
+pkg-config = "0.3.27"
 
 [features]
 mlx4 = []
