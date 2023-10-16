@@ -76,6 +76,10 @@ fn os_build() -> Result<()> {
         println!("cargo:rustc-link-lib=static:-bundle,+whole-archive={}", lib);
     }
 
+    println!("cargo:rustc-link-lib=dylib={}", "setupapi");
+    println!("cargo:rustc-link-lib=dylib={}", "dbghelp");
+    println!("cargo:rustc-link-lib=dylib={}", "mincore");
+
     // Step 2: Generate bindings for the DPDK headers.
     let bindings: Bindings = Builder::default()
         .clang_arg(&format!("-I{}", include_path))
