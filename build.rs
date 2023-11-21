@@ -298,6 +298,7 @@ fn os_build() -> Result<()> {
         .allowlist_function("rte_eth_tx_burst")
         .allowlist_function("rte_eth_rx_burst")
         .allowlist_function("rte_eal_init")
+        .allowlist_function("rte_pktmbuf_prepend")
         .clang_arg("-mavx")
         .header("wrapper.h")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
